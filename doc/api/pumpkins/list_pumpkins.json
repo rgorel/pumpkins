@@ -1,0 +1,67 @@
+{
+  "resource": "Pumpkins",
+  "http_method": "GET",
+  "route": "/v1/pumpkins",
+  "description": "List pumpkins",
+  "explanation": "List all available pumpkins",
+  "parameters": [
+
+  ],
+  "response_fields": [
+    {
+      "Type": "Integer",
+      "name": "id",
+      "description": "Pumpkin ID"
+    },
+    {
+      "Type": "String",
+      "name": "name",
+      "description": "Name of pumpkin"
+    },
+    {
+      "Type": "Float",
+      "name": "weight",
+      "description": "Weight in kilograms"
+    },
+    {
+      "Type": "String",
+      "Values": "hard, middle, soft",
+      "name": "softness",
+      "description": "How much soft it is"
+    },
+    {
+      "Type": "String",
+      "scope": "farm",
+      "name": "name",
+      "description": "Name of the farm where the pumpkin was grown"
+    },
+    {
+      "Type": "String",
+      "scope": "farm",
+      "name": "city",
+      "description": "Where is the farm located"
+    }
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/v1/pumpkins",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+        "{}": null
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[{\"id\":1,\"name\":\"Tyrel Heller\",\"weight\":2.73,\"softness\":\"middle\",\"farm\":{\"name\":\"Christiansen-Lockman\",\"city\":\"North Tanyaside\"}},{\"id\":2,\"name\":\"Fausto Feil\",\"weight\":2.82,\"softness\":\"hard\",\"farm\":{\"name\":\"Streich, Brakus and Lubowitz\",\"city\":\"Lake Solonstad\"}}]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://api.pumpkins.ua/v1/pumpkins\" -X GET \\\n\t-H \"Content-Type: application/json\""
+    }
+  ]
+}

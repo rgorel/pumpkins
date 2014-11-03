@@ -1,0 +1,90 @@
+{
+  "resource": "Pumpkins",
+  "http_method": "POST",
+  "route": "/v1/pumpkins",
+  "description": "Create pumpkin",
+  "explanation": "Get a pumpkin by id",
+  "parameters": [
+    {
+      "required": true,
+      "scope": "pumpkin",
+      "name": "name",
+      "description": "Name of pumpkin"
+    },
+    {
+      "required": false,
+      "scope": "pumpkin",
+      "name": "weight",
+      "description": "Weight in kilograms"
+    },
+    {
+      "required": false,
+      "scope": "pumpkin",
+      "name": "softness",
+      "description": "How much soft it is"
+    },
+    {
+      "required": false,
+      "scope": "pumpkin",
+      "Sub-fields": "name, city",
+      "name": "farm_attributes",
+      "description": "Parameters of the pumpkin's farm"
+    }
+  ],
+  "response_fields": [
+    {
+      "Type": "Integer",
+      "name": "id",
+      "description": "Pumpkin ID"
+    },
+    {
+      "Type": "String",
+      "name": "name",
+      "description": "Name of pumpkin"
+    },
+    {
+      "Type": "Float",
+      "name": "weight",
+      "description": "Weight in kilograms"
+    },
+    {
+      "Type": "String",
+      "Values": "hard, middle, soft",
+      "name": "softness",
+      "description": "How much soft it is"
+    },
+    {
+      "Type": "String",
+      "scope": "farm",
+      "name": "name",
+      "description": "Name of the farm where the pumpkin was grown"
+    },
+    {
+      "Type": "String",
+      "scope": "farm",
+      "name": "city",
+      "description": "Where is the farm located"
+    }
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/v1/pumpkins",
+      "request_body": "{\"pumpkin\":{\"name\":\"Jack\",\"weight\":2500,\"softness\":\"hard\",\"farm_attributes\":{\"name\":\"Roga i Kopyta LLC\",\"city\":\"Kiev\"}}}",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\"id\":3,\"name\":\"Jack\",\"weight\":2.5,\"softness\":\"hard\",\"farm\":{\"name\":\"Roga i Kopyta LLC\",\"city\":\"Kiev\"}}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://api.pumpkins.ua/v1/pumpkins\" -d '{\"pumpkin\":{\"name\":\"Jack\",\"weight\":2500,\"softness\":\"hard\",\"farm_attributes\":{\"name\":\"Roga i Kopyta LLC\",\"city\":\"Kiev\"}}}' -X POST \\\n\t-H \"Content-Type: application/json\""
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "resources": [
+    {
+      "name": "Pumpkins",
+      "examples": [
+        {
+          "description": "Create pumpkin",
+          "link": "pumpkins/create_pumpkin.json",
+          "groups": "all"
+        },
+        {
+          "description": "Get specific pumpkin",
+          "link": "pumpkins/get_specific_pumpkin.json",
+          "groups": "all"
+        },
+        {
+          "description": "List pumpkins",
+          "link": "pumpkins/list_pumpkins.json",
+          "groups": "all"
+        }
+      ]
+    }
+  ]
+}
