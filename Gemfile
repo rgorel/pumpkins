@@ -16,3 +16,6 @@ gem 'raddocs', github: 'smartlogic/raddocs'
 
 gem 'factory_girl_rails'
 gem 'faker'
+
+gem 'jwt', path: 'ruby-jwt'
+

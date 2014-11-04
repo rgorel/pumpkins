@@ -3,8 +3,13 @@ require "rails_helper"
 require "rspec_api_documentation/dsl"
 
 resource 'Pumpkins' do
+  let!(:user) { create(:user) }
+  let!(:token) { JWT.encode({user_id: user.id}, API::BaseController::SECRET) }
+
   header 'Host', 'api.example.com'
   header "Content-Type", "application/json"
+  
+  before { header 'Authorization', "Token token=\"#{token}\"" }
 
   let!(:pumpkins) {  create_list(:pumpkin, 2) }
   response_field :id, "Pumpkin ID", 'Type' => 'Integer'
