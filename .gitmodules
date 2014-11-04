@@ -1,0 +1,3 @@
+[submodule "ruby-jwt"]
+	path = ruby-jwt
+	url = git@github.com:progrium/ruby-jwt.git
